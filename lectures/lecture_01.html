@@ -5,6 +5,8 @@
         <title>ПСПИС | Лекция №1</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/blood.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
     </head>
     <body>
         <div class="reveal">
@@ -102,7 +104,8 @@
                         <p>Агент – система, которая получает из среды сигналы с помощью датчиков и 
 						действует в этой среде на основе знаний о ней и получаемых данных.</p>
                         <img data-src="./lecture_01/intelligent-agent.png">
-                        
+                        <p>Агент реализует отображение восприятия в действие: $$f: \bf{P} \to \bf{A}$$</p>
+
                         <aside class="notes">
                             Знакомая структура?
                             Обратная связь в агентах.
@@ -142,24 +145,49 @@
 
 					<section>
 						<h3>Поиск в ширину</h3>
-						
+						<ul>
+							<li>Граф состояний обходится по «уровням»</li>
+							<li>Уровень — удалённость от начального узла, исчисляемая в количестве дуг</li>
+						</ul>
 					</section>
 					
 					<section>
 						<h3>Поиск в глубину</h3>
+						<ul>
+							<li>Граф состояний обходится «слева направо»</li>
+							<li>Сначала проверяется самый левый путь по графу</li>
+						</ul>
 					</section>
 
 					<section>
 						<h3>Жадный поиск</h3>
+						<ul>
+							<li>Граф состояний обходится в порядке наименьшей/наибольшей стоимости пути</li>
+
+							<aside class="notes">
+								OPEN = [initial state]
+								CLOSED = []
+								while OPEN is not empty
+								do
+								 1. Remove the best node from OPEN, call it n, add it to CLOSED.
+								 2. If n is the goal state, backtrace path to n (through recorded parents) and return path.
+								 3. Create n's successors.
+								 4. For each successor do:
+								       a. If it is not in CLOSED and it is not in OPEN: evaluate it, add it to OPEN, and record its parent.
+								       b. Otherwise, if this new path is better than previous one, change its recorded parent.
+								          i.  If it is not in OPEN add it to OPEN.
+								          ii. Otherwise, adjust its priority in OPEN using this new evaluation.
+								done
+							</aside>
+						</ul>
 					</section>
 
 					<section>
 						<h3>A*</h3>
+						<ul>
+							<li>Граф состояний обходится в порядке наименьшей/наибольшей стоимости пути + <span class="fragment highlight-current-red">эвристика<span></li>
+						</ul>
 					</section>
-                </section>
-                
-                <section>
-                    <h3>Для тех, кому интересно</h3>
                 </section>
                 
                 <section>
@@ -168,17 +196,13 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js"></script>
         <script>
             Reveal.initialize({
                 slideNumber: true,
-                //math: {
-                //    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-                //    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-                //},
-
-                //dependencies: [
-                //    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
-                //]
+                dependencies: [
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
+                ],
             });
         </script>
     </body>

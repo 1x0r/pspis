@@ -27,15 +27,18 @@
                     </section>
                     <section>
                         <blockquote>«Интеллект состоит из двух частей [...]:
-                                    представлений о мире в форме <span class="fragment highlight-current-red">фактов</span>, из которых можно вывести решение задачи, [...]
-                                    и <span class="fragment highlight-current-red">алгоритма</span>, решающего эту задачу на основе этих фактов»</blockquote>
+                                    представлений о мире в форме <span class="fragment highlight-current-red">фактов</span>, 
+									из которых можно вывести решение задачи, [...]
+                                    и <span class="fragment highlight-current-red">алгоритма</span>, 
+									решающего эту задачу на основе этих фактов»</blockquote>
                     </section>
                     <section>
                         <h4>Что понимают под термином ИИ?</h4>
                         <ul>
                             <li class="fragment" data-fragment-index="1">Моделирование человеческого поведения</li>
                             <li class="fragment" data-fragment-index="2">Моделирование человеческого мышления</li>
-                            <li class="fragment" data-fragment-index="3">Моделирование разумного поведения<span class="fragment current-visible" data-fragment-index="4">???</span></li>
+                            <li class="fragment" data-fragment-index="3">Моделирование разумного поведения
+												<span class="fragment current-visible" data-fragment-index="4">???</span></li>
                             <li class="fragment" data-fragment-index="5">Моделирование рационального поведения</li>
                             <li class="fragment" data-fragment-index="6">Конкретные прикладные алгоритмы</li>
                         </ul>
@@ -96,7 +99,8 @@
                 <section>
                     <section>
                         <h3>Интеллектуальные агенты</h3>
-                        <p>Агент – система, которая получает из среды сигналы с помощью датчиков и действует в этой среде на основе знаний о ней и получаемых данных.</p>
+                        <p>Агент – система, которая получает из среды сигналы с помощью датчиков и 
+						действует в этой среде на основе знаний о ней и получаемых данных.</p>
                         <img data-src="./lecture_01/intelligent-agent.png">
                         
                         <aside class="notes">
@@ -115,17 +119,43 @@
                     
                     <section>
                         <h3>Рациональные агенты</h3>
-                        <p><span class="fragment highlight-green">Рациональный агент</span> для любого воспринятого состояния среды действует <span class="fragment highlight-current-red">наилучшим</span> возможным образом.</p>
+                        <p><span class="fragment highlight-green">Рациональный агент</span> для любого воспринятого 
+						состояния среды действует <span class="fragment highlight-current-red">наилучшим</span> возможным образом.</p>
                     </section>
                     
                     <section>
-                        <p></p>
                         <h3>Модель мира</h3>
                     </section>
                 </section>
                 
                 <section>
-                    <h3>Поисковые алгоритмы</h3>
+                    <section>
+						<h3>Поисковые алгоритмы</h3>
+						<ul>
+							<li>В рассматриваемых поисковых алгоритмах пространсттво состояний среды 
+							представляется в виде <span class="fragment highlight-current-red">орграфа</span></li>
+							<li>В узлах расположены всевозможные состояния среды</li>
+							<li>Дуги определяют переходы между состояниями и их <span class="fragment highlight-current-red">стоимость</span></li>
+							<li>Стоимость зависит как от среды, так и от <span class="fragment highlight-current-red">эвристики<span> агента</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Поиск в ширину</h3>
+						
+					</section>
+					
+					<section>
+						<h3>Поиск в глубину</h3>
+					</section>
+
+					<section>
+						<h3>Жадный поиск</h3>
+					</section>
+
+					<section>
+						<h3>A*</h3>
+					</section>
                 </section>
                 
                 <section>
@@ -141,14 +171,14 @@
         <script>
             Reveal.initialize({
                 slideNumber: true,
-                math: {
-                    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-                },
+                //math: {
+                //    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                //    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                //},
 
-                dependencies: [
-                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
-                ]
+                //dependencies: [
+                //    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
+                //]
             });
         </script>
     </body>

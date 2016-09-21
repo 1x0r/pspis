@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ПСПИС | Лекция №1</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/blood.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h4>Программные среды проектирования интеллектуальных систем</h2>
+                    <h3>Лекция №1</h3>
+                    <h2>Интеллектуальные системы, агенты и поисковые алгоритмы</h2>
+                    <br />
+                    <p align="right">Казарян Д.Э.</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Искусственный интеллект (ИИ)</h3>
+                    </section>
+                    <section>
+                        <img data-src="./lecture_01/john-mccarthy.png">
+                        <p>Джон МакКарти (1927 — 2011)</p>
+                    </section>
+                    <section>
+                        <blockquote>«Интеллект состоит из двух частей [...]:
+                                    представлений о мире в форме <span class="fragment highlight-current-red">фактов</span>, 
+									из которых можно вывести решение задачи, [...]
+                                    и <span class="fragment highlight-current-red">алгоритма</span>, 
+									решающего эту задачу на основе этих фактов»</blockquote>
+                    </section>
+                    <section>
+                        <h4>Что понимают под термином ИИ?</h4>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">Моделирование человеческого поведения</li>
+                            <li class="fragment" data-fragment-index="2">Моделирование человеческого мышления</li>
+                            <li class="fragment" data-fragment-index="3">Моделирование разумного поведения
+												<span class="fragment current-visible" data-fragment-index="4">???</span></li>
+                            <li class="fragment" data-fragment-index="5">Моделирование рационального поведения</li>
+                            <li class="fragment" data-fragment-index="6">Конкретные прикладные алгоритмы</li>
+                        </ul>
+                    </section>
+                    
+                    <aside class="notes">
+                        Не забыть упомянуть тест Тьюринга и китайскую комнату Сёрла
+                    </aside>
+                </section>
+                
+                <section>
+                    <section>
+                        <h3>Интеллектуальные системы</h3>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">Имеют цели и знания о среде, могут в ней полезно действовать</li>
+                            <li class="fragment" data-fragment-index="2">Моделируют поведение человека</li>
+                            <li class="fragment" data-fragment-index="3">Обрабатывают информацию для достижения цели</li>
+                            <li class="fragment" data-fragment-index="4">Умеют обучаться</li>
+                            <li class="fragment" data-fragment-index="5">Умеют подстраиваться под изменения среды</li>
+                        </ul>
+                        
+                        <aside class="notes">
+                            Though it is hard to quantify the intelligence of a system, one can certainly recognize the
+                            following two extremes in relation to some of the characteristics that it may possess:
+                            (a) Low intelligence: Typically a simple system, it has to be “told” everything and needs complete
+                            instructions, needs low-level control, the parameters are set, it is usually mechanical.
+                            (b) High intelligence: Typically a complex system, it is autonomous to a certain extent and needs
+                            few instructions, determines for itself what the goals are,demands high-level control, adaptive, makes
+                            decisions and choices, it is usually computerized.
+                            There is thus a continuum between these two extremes and most practical devices fall within
+                            this category. Because of this broad definition, all control systems are intelligent to a certain extent
+                            and in this respect they are similar. However, the more intelligent systems are able to handle more
+                            complex situations and make more complex decisions. As computer hardware and software improve
+                            it becomes possible to engineer systems that are more intelligent under this definition.
+                            We will be using a collection of techniques known as soft computing. These are inspired by
+                            biology and work well on nonlinear, complex problems.
+                            
+                            https://www3.nd.edu/~msen/Teaching/IntSyst/IntSystNotes.pdf
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <h3>Кибернетика — начало интеллектуальных систем</h3>
+                        <img data-src="./lecture_01/viner.jpg">
+                        <p>Норберт Винер (1894 — 1964)</p>
+                    </section>
+                    
+                    <section>
+                        <h3>Концепция технологической сингулярности</h3>
+                        <img data-src="./lecture_01/kurzweil-plot.jpg">
+                        
+                        <aside class="notes">
+                            Вернор Виндж -- автор концепции ТС.
+                        </aside>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h3>Интеллектуальные агенты</h3>
+                        <p>Агент – система, которая получает из среды сигналы с помощью датчиков и 
+						действует в этой среде на основе знаний о ней и получаемых данных.</p>
+                        <img data-src="./lecture_01/intelligent-agent.png">
+                        <p>Агент реализует отображение восприятия в действие: $$f: \bf{P} \to \bf{A}$$</p>
+
+                        <aside class="notes">
+                            Знакомая структура?
+                            Обратная связь в агентах.
+                            Интеллектуальные агенты и просто агенты.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Мир пылесоса</h3>
+                        <p>Классическая задача из книги «Искуственный интеллект. Современный подход» (Рассел, Норвиг).</p>
+                        <img data-src="./lecture_01/vacuum-env.jpg">
+                        <p>Воспринимает состояние среды и реагирует действием</p>
+                    </section>
+                    
+                    <section>
+                        <h3>Рациональные агенты</h3>
+                        <p><span class="fragment highlight-green">Рациональный агент</span> для любого воспринятого 
+						состояния среды действует <span class="fragment highlight-current-red">наилучшим</span> возможным образом.</p>
+                    </section>
+                    
+                    <section>
+                        <h3>Модель мира</h3>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+						<h3>Поисковые алгоритмы</h3>
+						<ul>
+							<li>В рассматриваемых поисковых алгоритмах пространсттво состояний среды 
+							представляется в виде <span class="fragment highlight-current-red">орграфа</span></li>
+							<li>В узлах расположены всевозможные состояния среды</li>
+							<li>Дуги определяют переходы между состояниями и их <span class="fragment highlight-current-red">стоимость</span></li>
+							<li>Стоимость зависит как от среды, так и от <span class="fragment highlight-current-red">эвристики<span> агента</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Поиск в ширину</h3>
+						<ul>
+							<li>Граф состояний обходится по «уровням»</li>
+							<li>Уровень — удалённость от начального узла, исчисляемая в количестве дуг</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>Поиск в глубину</h3>
+						<ul>
+							<li>Граф состояний обходится «слева направо»</li>
+							<li>Сначала проверяется самый левый путь по графу</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Жадный поиск</h3>
+						<ul>
+							<li>Граф состояний обходится в порядке наименьшей/наибольшей стоимости пути</li>
+
+							<aside class="notes">
+								OPEN = [initial state]
+								CLOSED = []
+								while OPEN is not empty
+								do
+								 1. Remove the best node from OPEN, call it n, add it to CLOSED.
+								 2. If n is the goal state, backtrace path to n (through recorded parents) and return path.
+								 3. Create n's successors.
+								 4. For each successor do:
+								       a. If it is not in CLOSED and it is not in OPEN: evaluate it, add it to OPEN, and record its parent.
+								       b. Otherwise, if this new path is better than previous one, change its recorded parent.
+								          i.  If it is not in OPEN add it to OPEN.
+								          ii. Otherwise, adjust its priority in OPEN using this new evaluation.
+								done
+							</aside>
+						</ul>
+					</section>
+
+					<section>
+						<h3>A*</h3>
+						<ul>
+							<li>Граф состояний обходится в порядке наименьшей/наибольшей стоимости пути + <span class="fragment highlight-current-red">эвристика<span></li>
+						</ul>
+					</section>
+                </section>
+                
+                <section>
+                    <h3>Опрос</h3>
+                </section>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js"></script>
+        <script>
+            Reveal.initialize({
+                slideNumber: true,
+                dependencies: [
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
+                ],
+            });
+        </script>
+    </body>
+</html>

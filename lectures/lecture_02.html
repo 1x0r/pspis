@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ПСПИС | Лекция №2</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/blood.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h4>Программные среды проектирования интеллектуальных систем</h2>
+                    <h3>Лекция №2</h3>
+                    <h2>Интеллектуальные агенты: архитектура</h2>
+                    <br />
+                    <p align="right">Казарян Д.Э.</p>
+                </section>
+
+                <section>
+                    <section>
+						<h3>Интеллектуальный агент</h3>
+					</section>
+					
+					<section>
+						<h4>Свойства агента</h4>
+						<ul>
+							<li>автономность</li>
+							<li>ситуативность</li>
+							<li>гибкость
+								<ul>
+									<li>реактивность</li>
+									<li>проактивность</li>
+									<li>социальность</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4>Описание агента</h4>
+						<ul>
+							<li><strong>В</strong>осприятие</li>
+							<li><strong>Д</strong>ействия</li>
+							<li><strong>Ц</strong>ели</li>
+							<li><strong>С</strong>реда</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4>Формальная архитектура агента </h4>
+						<p>$$A = \left\{S, A, f_a, f_e \right\}$$</p>
+						<p>$S = \{s_1, s_2, ..., s_n\}$ – множество состояний среды</p>
+						<p>$A = \{a_1, a_2, ..., a_m\}$ – множество возможных действий агента</p>
+						<p>$f_a: S \to A$ – функция агента</p>
+						<p>$f_e: S \times A \to S$ – функция среды</p>
+					</section>
+					
+                </section>
+				
+				<section>
+					<section>
+						<h3>Среда</h3>
+					</section>
+					
+					<section>
+						<h4>Классификация сред</h4>
+						<ul>
+							<li>Наблюдаемость: полная и частичная</li>
+							<li>Детерминизм и стохастичность</li>
+							<li>Статичность и динамичность</li>
+							<li>Дискретность и непрерывность</li>
+							<li>Одноагентная и многоагентная</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4>Изменение состояния среды</h4>
+						<p>$$f_e: S \times A \to S$$</p>
+						<p>$$f_e(s_i, a_j) = S'$$</p>
+						<p>Каково условие детерминистской среды?</p>
+					</section>
+					
+					<section>
+						<h4>История действий агента</h4>
+						<p>$h: s_0 \to s_1 \to s_2 \to \dots$</p>
+						<p>Чего не хватает в этой схеме?</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3>Поведение агента</h3>
+					</section>
+					
+					<section>
+						<h4>Характеристика поведения</h4>
+						<p>$h' = {h_0, h_1, \dots, h_n}$</p>
+					</section>
+					
+					<section>
+						<h4>Эквивалентность поведения</h4>
+						<p>$$agent_1 \~ agent_2 \leftrightarrow h'_1 = h'_2$$</p>
+					</section>
+				</section>
+				
+                <section>
+                    <h3>Опрос</h3>
+                </section>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js"></script>
+        <script>
+            Reveal.initialize({
+                slideNumber: true,
+                dependencies: [
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
+                ],
+            });
+        </script>
+    </body>
+</html>

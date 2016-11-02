@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ПСПИС | Лекция №2</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/blood.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h4>Программные среды проектирования интеллектуальных систем</h2>
+                    <h3>Лекция №3</h3>
+                    <h2>Задачи машинного обучения</h2>
+                    <br />
+                    <p align="right">Казарян Д.Э.</p>
+                </section>
+
+                <section>
+                    <section>
+						<h3>Машинное обучение</h3>
+						<h4>(Machine Learning)</h4>
+					</section>
+					
+                    <section>
+						<dl>
+							<dt>Машинное обучение</dt>
+							<dd>направление в науке об искусственном интеллекте, изучающее способность компьютеров к <span class="fragment highlight-red" data-fragment-index="1">обучению</span></dd>
+							<br />
+							<dt class="fragment" data-fragment-index="2">Машинное обучение по Т. Митчеллу</dt>
+							<dd class="fragment" data-fragment-index="2">Говорится, что алгоритм $A$ обучается на опыте $\mathbf{D}$ для решения класса задач $T$, если его производительность, определяемая по функционалу качества $\mathbf{L}$, увеличивается с опытом $\mathbf{D}$</dd>
+						</dl>
+					</section>
+					
+					
+					<section>
+						<h4>Терминология</h4>
+						<ul>
+							<li>$X$ &mdash; пространство входов</li>
+							<li>$Y$ &mdash; пространство выходов</li>
+							<li>$\mathbf{D}$ &mdash; множество данных (dataset)</li>
+							<li>$f: X \to Y$ &mdash; гипотеза, функция предсказания</li>
+							<li>$F$ &mdash; множество всех гипотез $f$ для $D$</li>
+							<li>$A: X^n \to F$ &mdash; алгоритм обучения, т.е. выбора $f \in F$ на основе $D$</li>
+							<li>$\mathbf{D}$ &mdash; множество данных (dataset)</li>
+							<li>$\mathbf{L}$ &mdash; функция стоимости (loss function)</li>
+						</ul>
+					</section>
+                </section>
+				
+				<section>
+					<section>
+						<h3>Парадигмы машинного обучения</h3>
+					</section>
+					
+					<section>
+						<h4>Примеры задач машинного обучения</h4>
+						<div class='left' style='float:left;width:48%'>
+						<ul>
+							<li class="fragment" data-fragment-index="1">Распознавание рукописного текста</li>
+							<li class="fragment" data-fragment-index="2">Обнаружение спама</li>
+							<li class="fragment" data-fragment-index="3">Машинный перевод</li>
+							<li class="fragment" data-fragment-index="4">Распознавание изображений</li>
+							<li class="fragment" data-fragment-index="5">Управление автономными роботами</li>
+							<li class="fragment" data-fragment-index="6">Рекомендательные системы</li>
+							<li class="fragment" data-fragment-index="7">Игры</li>
+						</ul>
+						</div>    
+						<div class='right' style='float:right;width:48%'>
+							<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+								<img class="fragment current-visible" data-fragment-index="1" data-src="http://rodrigob.github.io/are_we_there_yet/build/images/mnist.png?1363085077" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="2" data-src="http://www.spam.com/images/products/spam_classic.png" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="3" data-src="http://www.k-international.com/wp-content/uploads/2013/12/Google-Translate.jpg" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="4" data-src="http://www.hangthebankers.com/wp-content/uploads/2012/09/face-recognition-technology.png" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="5" data-src="https://tctechcrunch2011.files.wordpress.com/2014/12/v2.png?w=738" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="6" data-src="http://www.smritibhagat.com/img/portfolio/recommend.png" style="position:absolute;top:0;left:0;">
+								<img class="fragment current-visible" data-fragment-index="7" data-src="http://images.techtimes.com/data/images/full/96024/mari-o-ai-program-learns-to-play-super-mario-world.png?w=600" style="position:absolute;top:0;left:0;">
+							</div>
+						</div>
+					</section>
+						
+					<section>
+						<h4>Парадигмы обучения</h4>
+						<ul>
+							<li>Обучение с учителем (supervised)</li>
+							<li>Обучение с привлечением учителя (semi-supervised)</li>
+							<li>Обучение без учителя (unsupervised)</li>
+							<li>Обучение с подкреплением (reinforcement)</li>
+						</ul>
+					</section>
+					
+					<section>
+						<dl>
+							<dt>Обучение с учителем</dt>
+							<dd>класс алгоритмов, обучающихся на маркированных примерах: множество $\mathbf{D}$ содержит для каждого входа $x_i \in X$ соответствующий ему выход $y_i \in Y$</dd>
+						</dl>
+						<p>Решаемые задачи:</p>
+						<ul>
+							<li>Регрессия</li>
+							<li>Классификация</li>
+						</ul>
+					</section>
+
+					<section>
+						<dl>
+							<dt>Обучение с привлечением учителя</dt>
+							<dd>класс алгоритмов, обучающихся как на маркированных, так и на немаркированных примерах: множество $\mathbf{D}$ не для каждого входа $x_i \in X$ содержит соответствующий ему выход $y_i \in Y$</dd>
+						</dl>
+						<p>Решаемые задачи:</p>
+						<ul>
+							<li>Ранжирование</li>
+							<li>Трансдукция</li>
+						</ul>
+					</section>
+					
+					<section>
+						<dl>
+							<dt>Обучение без учителя</dt>
+							<dd>класс алгоритмов, обучающихся на немаркированных примерах: множество $\mathbf{D}$ содержит только примеры $x_i \in X$</dd>
+						</dl>
+						<p>Решаемые задачи:</p>
+						<ul>
+							<li>Кластеризация</li>
+							<li>Уменьшение размерности</li>
+							<li>Поиск аномалий</li>
+						</ul>
+					</section>
+					
+					<section>
+						<dl>
+							<dt>Обучение с подкреплением</dt>
+							<dd>класс алгоритмов, обучающихся на реакциях среды: множество $\mathbf{D}$ получается в процессе взаимодействия алгоритма (агента) со средой</dd>
+						</dl>
+						<p>Решаемые задачи:</p>
+						<ul>
+							<li>Управление</li>
+							<li>Логический вывод</li>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h3>Регрессия</h3>
+					</section>
+					
+					<section>
+						<h4>Задача регрессии</h4>
+						<p>Нахождение функциональной зависимости между входным примером $x$ и выходным примером $y$</p>
+						<br />
+						<img data-src="http://3qeqpr26caki16dnhd19sv6by6v.wpengine.netdna-cdn.com/wp-content/uploads/2014/07/ordinary-least-squares-regression-300x197.png">
+					</section>
+					
+					<section>
+						<h4>Линейная регрессия</h4>
+						<ul>
+							<li>Самый простой вид регрессии, при которм мы ищем зависимость в форме $$y = \mathbf{w}^T\mathbf{x}+b$$</li>
+							<li>Самый распространённый метод &mdash; <b>М</b>етод <b>Н</b>аименьших <b>К</b>вадратов</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Классификация и кластеризация</h3>
+					</section>
+					
+					<section>
+						<iframe class="stretch" src="https://docs.google.com/presentation/d/1vzGutGO0CfSbmarvanIxmQH5awnYe77WvfVNb6xwP2c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3>Кластеризация</h3>
+					</section>
+				</section>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js"></script>
+        <script>
+            Reveal.initialize({
+                slideNumber: true,
+                dependencies: [
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/math/math.min.js', async: true }
+                ],
+            });
+        </script>
+    </body>
+</html>
